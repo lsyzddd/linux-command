@@ -4,76 +4,98 @@
 
 > 在当前目录下创建一个目录test，并且只有文件主有读、写和执行权限，其他人没权限访问
 
-`mkdir -m 700 test`
+       `mkdir -m 700 test`
 
 > 在当前目录下创建目录bin，并且只有文件主有读、写和执行权限，同组的人拥有读和执行权限
 
-`mkdir -p-m 750 bin`
+       `mkdir -p-m 750 bin`
 
 ## 2.cat>>和cat（创建、连接文件）
 >在当前目录下创建文本文件my.txt
 
-`cat>>my.txt`
+       `cat>>my.txt`
 
 > 在当前设备中打印my.txt中的内容，并显示对应的行数
 
-`cat my.txt -n | -number`
+	   `cat my.txt -n | -number`
 
 > 合并当前目录下的my.txt和my2.txt到myfinal.txt的文件中
 
-`cat my.txt my2.txt > myfinal.txt`
+       `cat my.txt my2.txt > myfinal.txt`
 
 ## 3.rm（删除文件/目录）
 > 删除当前目录下的test文件夹，并提醒用户是否确认删除
 
-`rm -rf -i test`
+       `rm -rf -i test`
 >  删除当前目录下的test文件夹，不带任何提醒
 
-`rm -rf test`
+       `rm -rf test`
 > 删除当前目录下的mu.txt文件，并提醒用户是否确认删除
 
-`rm -i mu.txt`
+       `rm -i mu.txt`
 > 删除当前目录下的mu.txt文件，不带任何提醒
 
-`rm mu.txt`
+       `rm mu.txt`
 > 删除当前目录下的所有文件
 
-`rm -r *`
+       `rm -r *`
 
 ## 4.cp（复制文件）
 > 复制当前my.txt文件，复制后的新文件名为my2.txt
 
-`cp my.txt my2.txt`
+       `cp my.txt my2.txt`
 > 复制test1中所有文件到test2中，要求传递目录属性，不能有任何关于文件覆盖的提示
 
-`\cp -r -a test1/* test2`
+       `\cp -r -a test1/* test2`
 
 ## chmod（文件权限管理）
 
->`u` User，即文件或目录的拥有者；
+`u` User，即文件或目录的拥有者；
+
 `g` Group，即文件或目录的所属群组；
+
 `o` Other，除了文件或目录拥有者或所属群组之外，其他用户皆属于这个范围；
+
 `a` All，即全部的用户，包含拥有者，所属群组以及其他用户；
+
 `r` 读取权限，数字代号为“4”;
+
 `w` 写入权限，数字代号为“2”；
+
 `x` 执行或切换权限，数字代号为“1”；
+
 `-` 不具任何权限，数字代号为“0”；
+
 `s` 特殊功能说明：变更文件或目录的权限。
 
->例：rwx-rw-r--
-代表其中： 最前面那个 – 代表的是类型，
+例：rwx-rw-r--
+
+代表其中： 最前面那个 – 代表的是类型
+
 第一个rwx代表所有者（user）读写和执行权限
+
 第二个rw代表组群（group）读和写权限
+
 第三个r代表其他人（other）读权限
+
 r=读取属性　　//值＝4
+
 w=写入属性　  //值＝2
+
 x=执行属性　   //值＝1
+
 -rw——- (600) 只有所有者才有读和写的权限
+
 -rw-r–r– (644) 只有所有者才有读和写的权限，组群和其他人只有读的权限
+
 -rwx—— (700) 只有所有者才有读，写，执行的权限
+
 -rwxr-xr-x (755) 只有所有者才有读，写，执行的权限，组群和其他人只有读和执行的权限
+
 -rwx–x–x (711) 只有所有者才有读，写，执行的权限，组群和其他人只有执行的权限
+
 -rw-rw-rw- (666) 每个人都有读写的权限
+
 -rwxrwxrwx (777) 每个人都有读写和执行的权限
 
  1. `chmod u+x,g+w f01`//为文件f01设置自己（u）可以执行，组员（g）可以写入的权限
@@ -83,7 +105,7 @@ x=执行属性　   //值＝1
 
 > 文件的属主和属组属性设置
 
-`ll -d f1`查看目录f1的属性
+       `ll -d f1`查看目录f1的属性
 > 把文件f01给uesr，添加到market组
 
-`chown user:market f01`
+       `chown user:market f01`
