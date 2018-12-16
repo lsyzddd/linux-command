@@ -3,34 +3,49 @@
 ## 1.mkdir（创建目录）
 
 > 在当前目录下创建一个目录test，并且只有文件主有读、写和执行权限，其他人没权限访问
+
 `mkdir -m 700 test`
+
 > 在当前目录下创建目录bin，并且只有文件主有读、写和执行权限，同组的人拥有读和执行权限
+
 `mkdir -p-m 750 bin`
 
 ## 2.cat>>和cat（创建、连接文件）
-> 在当前目录下创建文本文件my.txt
+>在当前目录下创建文本文件my.txt
+
 `cat>>my.txt`
+
 > 在当前设备中打印my.txt中的内容，并显示对应的行数
+
 `cat my.txt -n | -number`
+
 > 合并当前目录下的my.txt和my2.txt到myfinal.txt的文件中
+
 `cat my.txt my2.txt > myfinal.txt`
 
 ## 3.rm（删除文件/目录）
 > 删除当前目录下的test文件夹，并提醒用户是否确认删除
+
 `rm -rf -i test`
 >  删除当前目录下的test文件夹，不带任何提醒
+
 `rm -rf test`
 > 删除当前目录下的mu.txt文件，并提醒用户是否确认删除
+
 `rm -i mu.txt`
 > 删除当前目录下的mu.txt文件，不带任何提醒
+
 `rm mu.txt`
 > 删除当前目录下的所有文件
+
 `rm -r *`
 
 ## 4.cp（复制文件）
 > 复制当前my.txt文件，复制后的新文件名为my2.txt
+
 `cp my.txt my2.txt`
 > 复制test1中所有文件到test2中，要求传递目录属性，不能有任何关于文件覆盖的提示
+
 `\cp -r -a test1/* test2`
 
 ## chmod（文件权限管理）
@@ -67,6 +82,8 @@ x=执行属性　   //值＝1
  4. `chmod a+x f01`//对文件f01的u,g,o都设置可执行属性
 
 > 文件的属主和属组属性设置
+
 `ll -d f1`查看目录f1的属性
 > 把文件f01给uesr，添加到market组
+
 `chown user:market f01`
